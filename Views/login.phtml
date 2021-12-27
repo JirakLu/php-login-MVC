@@ -1,0 +1,30 @@
+<div class="content-wrapper-form shadow">
+    <h1>Login Form</h1>
+    <p>Not registered yet? You can register <a href="loginProject/register">here</a>.</p>
+    <form method="post">
+        <label for="email">Email: </label>
+        <input placeholder="adam.pepega@seznam.cz" type="email" name="email" id="email">
+        <label for="password">Password: </label>
+        <div class="password-wrapper">
+            <div class="pass-icon" onclick="passChange()">👀</div>
+            <input type="password" name="password" id="password">
+        </div>
+        <div>
+            <label for="rememberMe">Remember Me</label>
+            <input type="checkbox" name="rememberMe" id="rememberMe">
+        </div>
+        <?php if ($_SESSION['errorMsg'][0]) echo "<div class='error-msg'>" . $_SESSION['errorMsg'][1] . "</div>" ?>
+        <input class="btn btn-hover title-2" type="submit" value="Submit">
+    </form>
+</div>
+<script>
+    const input = document.querySelector('input[type="password"]');
+
+    const passChange = () => {
+        if (input.type === 'password') {
+            input.type = 'text';
+        } else {
+            input.type = 'password';
+        }
+    }
+</script>

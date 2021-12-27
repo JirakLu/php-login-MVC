@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+:root {
+    --height: 5rem;
+    --max-width: 85rem;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+.nav-wrapper {
+    width: 100vw;
+    height: var(--height);
+    background-color: rgb(96 165 250);
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+}
+
+.title {
+    color: white;
+    text-transform: uppercase;
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    font-style: italic;
+    letter-spacing: 0.1rem;
+    font-weight: 700;
+}
+
+.title-2 {
+    color: white;
+    letter-spacing: 0.025rem;
+    font-weight: 700;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+}
+
+.spacing {
+    padding: 2px 0;
+    margin: 0 2rem;
+}
+
+.user-info {
+    background-color: rgb(137, 181, 232);
+    border-radius: 2rem;
+    display: grid;
+    place-items: center;
+    padding: 0.25rem 2rem;
+}
+
+.hover-underline {
+    display: inline-block;
+    position: relative;
+}
+
+.hover-underline:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #fafafa;
+    transform-origin: bottom right;
+    transition: transform 0.15s ease-out;
+}
+
+.hover-underline:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.shadow {
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+main {
+    height: calc(100% - (2 * var(--height)));
+}
+
+.main-wrapper {
+    height: 100%;
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: grid;
+    place-items: center;
+}
+
+.content-wrapper {
+    padding: 2rem 2rem;
+    background: #dcdcdc;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+}
+
+.btn {
+    margin: 2rem auto 0;
+    padding: 1rem 2rem;
+    display: inline-block;
+    background: rgb(96 165 250);
+    border: 3px solid white;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all 0.15s ease-out;
+    text-align: center;
+}
+
+.btn-hover:hover {
+    border: 3px solid rgb(96 165 250);
+    background: white;
+    color: rgb(96 165 250);
+}
+
+.error-msg {
+    color: red;
+}
+
+.content-wrapper-form {
+    padding: 2rem 2rem;
+    background: #dcdcdc;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    gap: 1rem;
+}
+
+.error-msg > ul {
+    display: flex;
+    flex-direction: column;
+    list-style: circle;
+    margin-left: 2rem;
+}
+
+.content-wrapper-form a {
+    color: rgb(96 165 250);
+}
+
+.content-wrapper-form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+
+input[type="email"], input[type="password"], input[type="text"] {
+    border: 1px solid black;
+    height: 2.5rem;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
+
+.password-wrapper {
+    position: relative;
+}
+
+.pass-icon {
+    position: absolute;
+    top: 7px;
+    right: 6px;
+    cursor: pointer;
+}
+
+.password-wrapper > input {
+    width: 100%;
+}
+
+footer {
+    width: 100vw;
+    height: var(--height);
+    background-color: rgb(96 165 250);
+    color: white;
+    display: grid;
+    place-items: center;
+}

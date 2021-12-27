@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head>
+    <base href="/localhost"/>
+    <meta charset="UTF-8"/>
+    <title><?= $title ?></title>
+    <meta name="description" content="<?= $description ?>"/>
+    <meta name="keywords" content="<?= $keyWords ?>"/>
+    <link rel="stylesheet" href="/loginProject/style.css" type="text/css"/>
+</head>
+
+<body>
+<header>
+    <nav class="nav-wrapper shadow">
+        <div class="nav">
+            <h1 class="title"><a href="loginProject/home">login projekt</a></h1>
+            <?php if ($_SESSION['isLoggedIn']) : ?>
+                <div class="user-info">
+                    <h1 style="color:black" class="title-2">Přihlášen jako - <?= $_SESSION['email'] ?></h1>
+                    <div style="display: flex; width: 100%; justify-content: space-between">
+                        <a href='loginProject/change' class="title-2 hover-underline">Změna hesla</a>
+                        <a href='loginProject/logout' class="title-2 hover-underline">Odhlásit se</a>
+                    </div>
+                </div>
+            <?php else : ?>
+                <ul>
+                    <li><a href="loginProject/login" class="title-2 hover-underline spacing">Login</a></li>
+                    <li><a href="loginProject/register" class="title-2 hover-underline spacing">Register</a></li>
+                </ul>
+            <?php endif; ?>
+        </div>
+    </nav>
+</header>
+<main>
+    <div class="main-wrapper">
+        <?php $this->controller->renderView(); ?>
+    </div>
+</main>
+<footer>
+    <h1 class="title"><a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Click me!</a></h1>
+</footer>
+</body>
+</html>

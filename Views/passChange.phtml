@@ -1,0 +1,50 @@
+<div class="content-wrapper-form shadow">
+    <h1>Password change form</h1>
+    <form method="post" >
+        <label for="passwordOld">Old Password: </label>
+        <div class="password-wrapper">
+            <div class="pass-icon" onclick="passChange1()">👀</div>
+            <input type="password" name="passwordOld" id="passwordOld">
+        </div>
+        <label for="passwordNew1">New Password: </label>
+        <div class="password-wrapper">
+            <div class="pass-icon" onclick="passChange2()">👀</div>
+            <input type="password" name="password1" id="password1">
+        </div>
+        <label for="passwordNew2">New Password: </label>
+        <div class="password-wrapper">
+            <div class="pass-icon" onclick="passChange3()">👀</div>
+            <input type="password" name="password2" id="password2">
+        </div>
+        <?php if ($_SESSION['errorMsg'][0]) echo "<div class='error-msg'>" . $_SESSION['errorMsg'][1] . "</div>" ?>
+        <input class="btn btn-hover title-2" type="submit" value="Submit">
+    </form>
+</div>
+<script>
+    const input1 = document.querySelector('#passwordOld');
+    const input2 = document.querySelector('#password1');
+    const input3 = document.querySelector('#password2')
+
+    const passChange1 = () => {
+        if (input1.type === 'password') {
+            input1.type = 'text';
+        } else {
+            input1.type = 'password';
+        }
+    }
+    const passChange2 = () => {
+        if (input2.type === 'password') {
+            input2.type = 'text';
+        } else {
+            input2.type = 'password';
+        }
+    }
+
+    const passChange3 = () => {
+        if (input3.type === 'password') {
+            input3.type = 'text';
+        } else {
+            input3.type = 'password';
+        }
+    }
+</script>

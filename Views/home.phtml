@@ -1,0 +1,15 @@
+
+<?php if ($_SESSION['isLoggedIn']) : ?>
+    <?php if ($_SESSION['level'] == 'owner') : ?>
+        <h1>Jsi pojebaná legenda</h1>
+    <?php elseif ($_SESSION['level'] == 'admin') : ?>
+        <h1>Jsi něco víc jak hovno</h1>
+    <?php else : ?>
+        <h1>Jsi celkem hovno</h1>
+    <?php endif; ?>
+<?php else : ?>
+    <div class="content-wrapper shadow">
+        <h1>Měl by ses přihlásit 🤨</h1>
+        <a class="title-2 btn btn-hover" href='loginProject/login'>Přihlásit se</a>
+    </div>
+<?php endif; ?>
