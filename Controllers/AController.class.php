@@ -1,7 +1,5 @@
 <?php
 
-use JetBrains\PhpStorm\NoReturn;
-
 abstract class AController
 {
     protected array $data = array();
@@ -16,7 +14,7 @@ abstract class AController
         }
     }
 
-    #[NoReturn] public function redirect($url): void {
+    public function redirect($url): void {
         header("Location: $url");
         header("Connection: close");
         exit;
