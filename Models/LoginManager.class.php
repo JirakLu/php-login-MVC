@@ -5,7 +5,7 @@ class LoginManager
 
     public static string $passwordRegex = "/^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])(?=\S*[\W])\S*$/";
 
-    public static function handleRegister(string $email, string $password1, string $password2)
+    public static function handleRegister(string $email, string $password1, string $password2): bool
     {
         $db = LoginDbFile::get();
         if (!self::checkCredentials($email, $password1)) {
