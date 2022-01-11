@@ -10,8 +10,6 @@ if (!isset($_SESSION['isLoggedIn'])) {
     $_SESSION['errorMsg'] = [false,''];
 }
 
-
-
 //Initializing
 mb_internal_encoding('UTF-8');
 
